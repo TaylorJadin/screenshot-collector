@@ -39,7 +39,7 @@ let urls = [
   'http://noahfidlin.knight.domains',
   'http://parisa.knight.domains',
   'http://ruthie.knight.domains',
-  'http://ryannygaard.knight.domains',
+  'http://ryannygaard.knight.domains'
 ]
 
 for (let item of urls) {
