@@ -215,7 +215,7 @@ const getScreenshots = async (urls, parallel) => {
             let filename = nohttp.replace(/[\W_]+/g,"-");
             // sleep 2 seconds to account for those dang splash screens
             await sleep(2000)
-            await page.screenshot({ path: 'output ' + filename + '.png' }).then(console.log(urls[elem] + ' ✅'))
+            await page.screenshot({ path: 'output/' + filename + '.png' }).then(console.log(urls[elem] + ' ✅'))
           } catch (err) {
             console.log(console.log(urls[elem] + ' ❌'))
           }
