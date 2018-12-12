@@ -1,5 +1,5 @@
 const puppeteer = require('puppeteer');
-const parallel = 4
+const parallel = 6 
 const sleep = (ms) => {
   return new Promise((resolve) =>
     setTimeout(resolve, ms)
@@ -187,7 +187,7 @@ const urls = [
 const getScreenshots = async (urls, parallel) => {
   const parallelBatches = Math.ceil(urls.length / parallel)
   console.log('URLs: ' + urls.length + '\n' +
-              parallelBatches + ' batches of ' + parallel + ' screenshots ');
+              parallelBatches + ' batches with ' + parallel + ' screenshots per batch');
   
   // split up the array of urls
   let k = 0
@@ -215,9 +215,9 @@ const getScreenshots = async (urls, parallel) => {
             let filename = nohttp.replace(/[\W_]+/g,"-");
             // sleep 2 seconds to account for those dang splash screens
             await sleep(2000)
-            await page.screenshot({ path: 'output/' + filename + '.png' }).then(console.log(urls[elem] + ' ✅'))
+            await page.screenshot({ path: 'output/' + filename + '.png' }).then(console.log('✅ ' + urls[elem]))
           } catch (err) {
-            console.log(console.log(urls[elem] + ' ❌'))
+            console.log(console.log('❌ ' + urls[elem]))
           }
         }))
       }
