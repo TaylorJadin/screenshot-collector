@@ -42,13 +42,22 @@ let urls = [
   'http://ryannygaard.knight.domains'
 ]
 
+// var i,j,chunkyURLs,chunk = 10;
+// for (i=0,j=urls.length; i<j; i+=chunk) {
+//   chunkyURLs = urls.slice(i,i+chunk);
+//   console.log(chunkyURLs);
+// }
 for (let item of urls) {
 (async () => {
+  const navigationPromise = page.waitForNavigation();
   const browser = await puppeteer.launch();
   const page = await browser.newPage();
-  let filename = item.replace(/[\W_]+/g,"-");
+  let nohttp = item.replace(/http[s]{0,1}:\/\//g,"")
+  let filename = nohttp.replace(/[\W_]+/g,"-");
   await page.setViewport({width: 1280, height: 720})
   await page.goto(item);
+  await console.log(item);
+  await navigationPromise;
   await sleep(1500);
   await page.screenshot({path: filename + '.png'});
   await browser.close();
