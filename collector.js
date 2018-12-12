@@ -1,5 +1,10 @@
 const puppeteer = require('puppeteer');
 const parallel = 4
+const sleep = (ms) => {
+  return new Promise((resolve) =>
+    setTimeout(resolve, ms)
+  );
+}
 
 const urls = [ 
   'http://adambrandt.knight.domains',
@@ -208,6 +213,8 @@ const getScreenshots = async (urls, parallel) => {
             let nohttp = urls[elem].replace(/http[s]{0,1}:\/\//g,"")
             // strip out special characters from filenames
             let filename = nohttp.replace(/[\W_]+/g,"-");
+            // sleep 1.5 seconds to account for those dang splash screens
+            sleep(1500)
             await page.screenshot({ path: filename + '.png' }).then(console.log(urls[elem] + ' ✅'))
           } catch (err) {
             console.log(console.log(urls[elem] + ' ❌'))
