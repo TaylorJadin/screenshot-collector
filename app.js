@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 ////////// Configuration //////////
 
 const parallel = 4  // How many pages should be loaded at a time?
