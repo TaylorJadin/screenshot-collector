@@ -1,5 +1,12 @@
 jadin.me
 knight.domains
+blog.knight.domains
+twitter.com/taylorjadin
 snc.edu
 google.com
 amazon.com
+reddit.com
+news.ycombinator.com
+en.wikipedia.org
+youtube.com
+theverge.com
