@@ -3,7 +3,7 @@
 ////////// Configuration //////////
 
 const parallel = 8  // How many pages should be loaded at a time?
-const urlsFile = 'urls.txt' // What file should urls be read in from?
+const urlsFile = 'urls-example.txt' // What file should urls be read in from?
 const outputFolder = 'screenshots' // What folder should the screenshots be put in?
 
 ///////////////////////////////////
