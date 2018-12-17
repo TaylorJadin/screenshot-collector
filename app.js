@@ -4,7 +4,7 @@
 
 const parallel = 4  // How many pages should be loaded at a time?
 const urlsFile = 'urls.txt' // What file should urls be read in from?
-const outputFolder = 'output' // What folder should the screenshots be put in?
+const outputFolder = 'test' // What folder should the screenshots be put in?
 
 ///////////////////////////////////
 
@@ -17,7 +17,7 @@ const sleep = (ms) => {
   );
 }
 
-// Read urls in from txt file, if you have http(s)// on each line file you will need to modify line 37 below
+// Read urls in from txt file, if http(s)// is on each line file you will need to modify line 37 below
 const urls = fs.readFileSync(urlsFile).toString().split('\n')
 
 const getScreenshots = async (urls, parallel) => {
@@ -52,7 +52,7 @@ const getScreenshots = async (urls, parallel) => {
             // sleep 2 seconds to account for those dang splash screens
             await sleep(2000)
             // make the screenshot
-            await page.screenshot({ path: outputFolder + filename + '.png' }).then(console.log('✅ ' + urls[elem]))
+            await page.screenshot({ path: 'screenshots/' + filename + '.png' }).then(console.log('✅ ' + urls[elem]))
           } catch (err) {
             // if there is an error, eturn the error (usually this is "undefined," meaning nothing was on the page)
             console.log(console.log('❌ ' + urls[elem]))
