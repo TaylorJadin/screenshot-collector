@@ -22,7 +22,7 @@ if (!fs.existsSync(outputFolder)){
   fs.mkdirSync(outputFolder);
 }
 
-// Read urls in from txt file, if http(s)// is on each line file you will need to modify line 37 below
+// Read urls in from txt file, if http(s)// is on each line you will need to modify line 37 below
 const urls = fs.readFileSync(urlsFile).toString().split('\n')
 
 const getScreenshots = async (urls, parallel) => {
