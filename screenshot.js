@@ -57,10 +57,10 @@ const getScreenshots = async (urls, parallel) => {
             // sleep 2 seconds to account for those dang splash screens
             await sleep(2000)
             // make the screenshot
-            await page.screenshot({ path: outputFolder + '/' + filename + '.png' }).then(console.log('✅  ' + urls[elem]))
+            await page.screenshot({ path: outputFolder + '/' + filename + '.png' }).then(console.log('[+]  ' + urls[elem]))
           } catch (err) {
             // if there is an error, eturn the error (usually this is "undefined," meaning nothing was on the page)
-            console.log(console.log('❌ ' + urls[elem]))
+            console.log(console.log('[X] ' + urls[elem]))
           }
         }))
       }
