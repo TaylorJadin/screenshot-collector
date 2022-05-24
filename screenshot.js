@@ -59,7 +59,7 @@ const getScreenshots = async (urls, parallel) => {
             // make the screenshot
             await page.screenshot({ path: outputFolder + '/' + filename + '.png' }).then(console.log('[+]  ' + urls[elem]))
           } catch (err) {
-            // if there is an error, eturn the error (usually this is "undefined," meaning nothing was on the page)
+            // if there is an error, return the error (usually this is "undefined," meaning nothing was on the page)
             console.log(console.log('[X] ' + urls[elem]))
           }
         }))
