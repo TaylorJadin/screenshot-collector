@@ -18,3 +18,4 @@ techbar.knight.domains
 flyingchaucer.net
 video.jadin.me
 archive.reclaim.tv
+exhibits.library.oneonta.edu/s/cgpcommunitystories/page/welcome
