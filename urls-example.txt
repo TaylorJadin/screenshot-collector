@@ -10,3 +10,8 @@ news.ycombinator.com
 en.wikipedia.org
 youtube.com
 theverge.com
+pilotirwin.com
+bavatuesdays.com
+laurenhanks.com
+annickarabida.com
+techbar.knight.domains
